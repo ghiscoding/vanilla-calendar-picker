@@ -1,0 +1,84 @@
+# Usage
+
+Now that you have installed VanillaCalendar, you can create your first calendar. VanillaCalendar can be used **in combination with «Input»** or **statically without «Input»**.
+
+Almost all pages in this section use the simplest option — **statically without «Input»**. If you're interested in how to use this calendar **in combination with «Input»**, visit the page <a href="/docs/learn/additional-features/date-picker-in-input">«Date Selection in Input»</a>.
+
+## HTML
+
+Create an HTML tag with any unique CSS selector anywhere on your page; the calendar will reference it and use it as an identifier.
+
+As an example in this documentation, an **«id»** attribute with the value **«calendar»** will be used.
+
+
+```html
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="calendar"></div>
+  </body>
+</html>
+```
+
+## JS
+If you installed VanillaCalendar using NPM or Yarn, you need to import JavaScript and the necessary styles. If you connected VanillaCalendar locally or used a CDN, you can skip this step.
+
+```js
+import { VanillaCalendar } from 'vanilla-calendar-picker';
+import 'vanilla-calendar-picker/build/vanilla-calendar.min.css';
+```
+
+<Info>
+  In addition to the file **«vanilla-calendar.min.css»**, which contains all possible calendar styles, there are separate style files in the **«build»** directory. Please include them instead of **«vanilla-calendar.min.css»** if you find it necessary.
+</Info>
+
+```js
+// Only layout calendar
+import 'vanilla-calendar-picker/build/vanilla-calendar.layout.min.css';
+
+// Themes
+import 'vanilla-calendar-picker/build/themes/light.min.css';
+import 'vanilla-calendar-picker/build/themes/dark.min.css';
+```
+
+<Info>
+  The calendar automatically displays the theme used in the user's system. You can disable this default behavior and forcibly set any of the themes.
+  In this case, you don't need to import all the themes.
+</Info>
+
+Now, create an instance of VanillaCalendar with default parameters and initialize it.
+
+```js
+const calendar = new VanillaCalendar('#calendar');
+calendar.init();
+```
+
+The full example with html and js files can be viewed in the sandbox by clicking the **"Open"** button at the top right.
+
+<Sandbox example="try-vanilla-calendar" />
+
+## Locally or via CDN
+
+If you want to use CDN, insert the scripts and styles into your HTML document from the <a href="/docs/learn/getting-started/installation#cdn">«Connection via CDN»</a>.
+
+```html
+<html>
+  <head>
+    <link href="./vanilla-calendar.min.css" rel="stylesheet">
+    <script src="./vanilla-calendar.min.js" defer></script>
+  </head>
+  <body>
+    <div id="calendar"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const calendar = new VanillaCalendar('#calendar');
+        calendar.init();
+      });
+    </script>
+  </body>
+</html>
+```
+
+Now, you have a simple calendar with default parameters. You can customize it to suit your needs, as described in other sections of the documentation.

@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./build/",
+		"target": "ESNext",
+		"allowJs": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"lib": ["es2021", "DOM"],
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": false,
+		"noEmit": true,
+		"skipLibCheck": true,
+		"types": ["cypress", "node", "vite"],
+		"typeRoots": ["./node_modules/@types"],
+		"paths": {
+			"@/*": ["./*"],
+			"@package/*": ["./package/*"],
+			"@src/*": ["./package/src/*"],
+			"@scripts/*": ["./package/src/scripts/*"],
+		}
+	},
+	"include": ["src/**/*", "index.d.ts", "**/*.ts", "**/*.cy.ts"],
+	"exclude": ["node_modules", "next/*", "examples/*", "/package.classes.ts",  "/package.types.ts"]
+}

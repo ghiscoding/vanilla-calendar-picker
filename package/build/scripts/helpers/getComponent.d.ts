@@ -1,0 +1,3 @@
+declare const getComponent: (pattern: string) => ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string) | ((self: import('../..').VanillaCalendar) => string);
+export default getComponent;
+//# sourceMappingURL=getComponent.d.ts.map

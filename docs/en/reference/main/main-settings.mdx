@@ -1,0 +1,133 @@
+# Main Settings
+
+Main settings provide the most important options for configuring the calendar.
+
+## input
+
+`Type: Boolean`
+
+`Default: false`
+
+`Options: true | false`
+
+```js
+new VanillaCalendar('#calendar', {
+  input: true,
+});
+```
+
+The `input` parameter specifies that the `HTMLElement` passed as the first parameter represents an input field rather than a wrapper for the calendar.
+
+- - -
+
+## type
+
+`Type: String`
+
+`Default: 'default'`
+
+`Options: 'default' | 'multiple' | 'month' | 'year'`
+
+```js
+new VanillaCalendar('#calendar', {
+  type: 'default',
+});
+```
+
+The `type` parameter determines the type of calendar displayed.
+
+- - -
+
+## months
+
+`Type: Number`
+
+`Default: 2`
+
+`Options: от 2 до 12`
+
+```js
+new VanillaCalendar('#calendar', {
+  months: 2,
+});
+```
+
+The `months` parameter specifies the number of displayed months when the calendar type is set to `'multiple'`.
+
+- - -
+
+## jumpMonths
+
+`Type: Number`
+
+`Default: 1`
+
+`Options: от 1 до ∞`
+
+```js
+new VanillaCalendar('#calendar', {
+  jumpMonths: 1,
+});
+```
+
+The `jumpMonths` parameter controls the number of months to jump.
+
+- - -
+
+## date.min
+
+`Type: String`
+
+`Default: '1970-01-01'`
+
+`Options: 'YYYY-MM-DD'`
+
+```js
+new VanillaCalendar('#calendar', {
+  date: {
+    min: '1970-01-01',
+  },
+});
+```
+
+The `date.min` parameter sets the minimum allowable date that the calendar will consider, which cannot be earlier than this date.
+
+- - -
+
+## date.max
+
+`Type: String`
+
+`Default: '2470-12-31'`
+
+`Options: 'YYYY-MM-DD'`
+
+```js
+new VanillaCalendar('#calendar', {
+  date: {
+    max: '2470-12-31',
+  },
+});
+```
+
+The `date.max` parameter sets the maximum allowable date that the calendar will consider, which cannot be later than this date.
+
+- - -
+
+## date.today
+
+`Type: Date object`
+
+`Default: new Date()`
+
+`Options: new Date()`
+
+```js
+new VanillaCalendar('#calendar', {
+  date: {
+    today: new Date('2022-01-07'),
+  },
+});
+```
+
+The `date.today` parameter determines which day is considered today for the calendar.
