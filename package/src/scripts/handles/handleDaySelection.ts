@@ -10,10 +10,10 @@ const handleDaySelection = (self: VanillaCalendar, dayBtnEl: HTMLElement, multip
 	if (isSelected && !self.settings.selection.cancelableDay) return;
 
 	let canToggle = true;
-	if (self.settings.toggleSelected !== undefined) {
-		canToggle = (typeof self.settings.toggleSelected === 'function')
-			? self.settings.toggleSelected(self)
-			: self.settings.toggleSelected;
+	if (self.toggleSelected !== undefined) {
+		canToggle = (typeof self.toggleSelected === 'function')
+			? self.toggleSelected(self)
+			: self.toggleSelected;
 	}
 
 	if (isSelected && !canToggle) return;

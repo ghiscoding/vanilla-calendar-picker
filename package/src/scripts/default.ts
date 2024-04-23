@@ -11,6 +11,7 @@ export default class DefaultOptionsCalendar {
 	type: T.TypesCalendar = 'default';
 	months = 2;
 	jumpMonths = 1;
+	toggleSelected: T.ToggleSelected = true;
 	jumpToSelectedDate = false;
 	date: T.IDates = {
 		min: '1970-01-01',
@@ -20,7 +21,6 @@ export default class DefaultOptionsCalendar {
 	settings: T.ISettings = {
 		lang: 'en',
 		iso8601: true,
-		toggleSelected: true,
 		range: {
 			min: this.date.min,
 			max: this.date.max,

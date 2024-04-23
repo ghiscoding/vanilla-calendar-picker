@@ -26,8 +26,8 @@ const configInput: IOptions = {
 		today: new Date('2022-04-07T00:00'), // use T00:00 for local date
 	},
 	jumpToSelectedDate: true,
+	toggleSelected: false,
 	settings: {
-		toggleSelected: false,
 		visibility: {
 			positionToInput: 'center',
 		},
