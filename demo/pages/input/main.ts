@@ -25,8 +25,8 @@ const configInput: IOptions = {
 		// min: '2022-03-20',
 		today: new Date('2022-04-07T00:00'), // use T00:00 for local date
 	},
+	jumpToSelectedDate: true,
 	settings: {
-		jumpToSelectedDate: true,
 		toggleSelected: false,
 		visibility: {
 			positionToInput: 'center',
@@ -53,6 +53,7 @@ const configInput: IOptions = {
 const configDiv: IOptions = {
 	input: true,
 	type: 'multiple',
+	jumpToSelectedDate: true,
 	actions: {
 		changeToInput(e, self) {
 			if (!self.HTMLInputElement) return;
@@ -67,7 +68,6 @@ const configDiv: IOptions = {
 		},
 	},
 	settings: {
-		jumpToSelectedDate: true,
 		selection: {
 			day: 'multiple-ranged',
 		},

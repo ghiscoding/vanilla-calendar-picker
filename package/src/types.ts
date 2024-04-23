@@ -22,7 +22,7 @@ export interface IDates {
 	today: Date;
 }
 
-export type Sanitizer = (dirtyHtml: string) => string; // | TrustedHTML;
+export type Sanitizer = (dirtyHtml: string) => unknown;
 
 export interface IRange {
 	min: FormatDateString | 'today';
@@ -69,7 +69,6 @@ export interface IVisibility {
 export interface ISettings {
 	lang: string;
 	iso8601: boolean;
-	jumpToSelectedDate: boolean;
 	toggleSelected: boolean | ((self: IVanillaCalendar) => boolean);
 	range: IRange;
 	selection: ISelection;
@@ -129,12 +128,12 @@ export interface IOptions {
 	type?: TypesCalendar;
 	months?: number;
 	jumpMonths?: number;
+	jumpToSelectedDate?: boolean;
 	date?: Partial<IDates>;
 	sanitizer?: Sanitizer;
 	settings?: Partial<{
 		lang: string;
 		iso8601: boolean;
-		jumpToSelectedDate: boolean;
 		toggleSelected: boolean | ((self: IVanillaCalendar) => boolean);
 		range: Partial<IRange>;
 		selection: Partial<ISelection>;
@@ -153,11 +152,11 @@ export interface IVanillaCalendar {
 	type: TypesCalendar;
 	months: number;
 	jumpMonths: number;
+	jumpToSelectedDate: boolean;
 	date: IDates;
 	settings: {
 		lang: string;
 		iso8601: boolean;
-		jumpToSelectedDate: boolean;
 		toggleSelected: boolean | ((self: IVanillaCalendar) => boolean);
 		range: IRange;
 		selection: ISelection;

@@ -5,6 +5,7 @@ export default class DefaultOptionsCalendar {
     type: T.TypesCalendar;
     months: number;
     jumpMonths: number;
+    jumpToSelectedDate: boolean;
     date: T.IDates;
     settings: T.ISettings;
     locale: T.ILocale;

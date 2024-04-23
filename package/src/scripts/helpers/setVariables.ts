@@ -7,7 +7,7 @@ import { FormatDateString } from '@src/types';
 import messages from './getMessages';
 
 const initSelectedMonthYear = (self: VanillaCalendar) => {
-	if (self.settings.jumpToSelectedDate && self.settings.selected.dates?.length && (self.settings.selected.month === undefined && self.settings.selected.year === undefined)) {
+	if (self.jumpToSelectedDate && self.settings.selected.dates?.length && (self.settings.selected.month === undefined && self.settings.selected.year === undefined)) {
 		const selectedDate = getDate(parseDates(self.settings.selected.dates)[0]);
 		self.settings.selected.month = selectedDate.getMonth();
 		self.settings.selected.year = selectedDate.getFullYear();
