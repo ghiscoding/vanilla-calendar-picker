@@ -1,4 +1,4 @@
-import * as T from '@src/types';
+import { IOptions, IReset, IVanillaCalendar } from '@src/types';
 import DefaultOptionsCalendar from '@scripts/default';
 import init from '@scripts/init';
 import update from '@scripts/update';
@@ -7,8 +7,8 @@ import show from '@scripts/show';
 import hide from '@scripts/hide';
 import messages from '@scripts/helpers/getMessages';
 
-export class VanillaCalendar extends DefaultOptionsCalendar implements T.IVanillaCalendar {
-	constructor(selector: HTMLElement | string, options?: Partial<T.IOptions>) {
+export class VanillaCalendar extends DefaultOptionsCalendar implements IVanillaCalendar {
+	constructor(selector: HTMLElement | string, options?: Partial<IOptions>) {
 		super();
 
 		this.HTMLElement = (typeof selector === 'string' ? document.querySelector(selector) : selector) as HTMLElement;
@@ -31,7 +31,7 @@ export class VanillaCalendar extends DefaultOptionsCalendar implements T.IVanill
 
 	init = () => init(this);
 
-	update = (reset?: T.IReset) => update(this, reset);
+	update = (reset?: IReset) => update(this, reset);
 
 	destroy = () => destroy(this);
 

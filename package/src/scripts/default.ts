@@ -1,24 +1,35 @@
 import classes from '@src/classes';
-import * as T from '@src/types';
 import DOMDefault from '@scripts/templates/DOMDefault';
 import DOMMultiple from '@scripts/templates/DOMMultiple';
 import DOMMonth from '@scripts/templates/DOMMonth';
 import DOMYear from '@scripts/templates/DOMYear';
+import type {
+	CSSClasses,
+	FormatDateString,
+	IActions,
+	IDates,
+	IDOMTemplates,
+	ILocale,
+	IPopups,
+	ISettings,
+	ToggleSelected,
+	TypesCalendar,
+} from '../types';
 
 export default class DefaultOptionsCalendar {
 	isInit = false;
 	input = false;
-	type: T.TypesCalendar = 'default';
+	type: TypesCalendar = 'default';
 	months = 2;
 	jumpMonths = 1;
-	toggleSelected: T.ToggleSelected = true;
+	toggleSelected: ToggleSelected = true;
 	jumpToSelectedDate = false;
-	date: T.IDates = {
+	date: IDates = {
 		min: '1970-01-01',
 		max: '2470-12-31',
 		today: new Date(),
 	};
-	settings: T.ISettings = {
+	settings: ISettings = {
 		lang: 'en',
 		iso8601: true,
 		range: {
@@ -60,12 +71,12 @@ export default class DefaultOptionsCalendar {
 			positionToInput: 'left',
 		},
 	};
-	locale: T.ILocale = {
+	locale: ILocale = {
 		months: [],
 		weekday: [],
 	};
 	sanitizer = (dirtyHtml: string) => dirtyHtml;
-	actions: T.IActions = {
+	actions: IActions = {
 		clickDay: null,
 		clickWeekNumber: null,
 		clickMonth: null,
@@ -82,9 +93,9 @@ export default class DefaultOptionsCalendar {
 		showCalendar: null,
 		hideCalendar: null,
 	};
-	popups: T.IPopups = {};
-	CSSClasses: T.CSSClasses = { ...classes };
-	DOMTemplates: T.IDOMTemplates = {
+	popups: IPopups = {};
+	CSSClasses: CSSClasses = { ...classes };
+	DOMTemplates: IDOMTemplates = {
 		default: DOMDefault(this.CSSClasses),
 		multiple: DOMMultiple(this.CSSClasses),
 		month: DOMMonth(this.CSSClasses),
@@ -93,19 +104,19 @@ export default class DefaultOptionsCalendar {
 	HTMLElement!: HTMLElement;
 	HTMLOriginalElement!: HTMLElement;
 	HTMLInputElement?: HTMLInputElement;
-	rangeMin!: T.FormatDateString;
-	rangeMax!: T.FormatDateString;
-	rangeDisabled!: T.FormatDateString[];
-	rangeEnabled!: T.FormatDateString[];
-	selectedDates!: T.FormatDateString[];
-	selectedHolidays!: T.FormatDateString[];
+	rangeMin!: FormatDateString;
+	rangeMax!: FormatDateString;
+	rangeDisabled!: FormatDateString[];
+	rangeEnabled!: FormatDateString[];
+	selectedDates!: FormatDateString[];
+	selectedHolidays!: FormatDateString[];
 	selectedMonth!: number;
 	selectedYear!: number;
 	selectedHours!: string;
 	selectedMinutes!: string;
 	selectedKeeping!: string;
 	selectedTime!: string;
-	currentType!: T.TypesCalendar;
+	currentType!: TypesCalendar;
 	correctMonths!: number;
 	viewYear!: number;
 	dateMin!: Date;

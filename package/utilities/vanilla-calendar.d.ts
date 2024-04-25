@@ -1,9 +1,10 @@
 import { default as DefaultOptionsCalendar } from './scripts/default';
-import * as T from '@src/types';
-export declare class VanillaCalendar extends DefaultOptionsCalendar implements T.IVanillaCalendar {
-    constructor(selector: HTMLElement | string, options?: Partial<T.IOptions>);
+import { IOptions, IReset, IVanillaCalendar } from './types';
+
+export declare class VanillaCalendar extends DefaultOptionsCalendar implements IVanillaCalendar {
+    constructor(selector: HTMLElement | string, options?: Partial<IOptions>);
     init: () => () => void;
-    update: (reset?: T.IReset) => void;
+    update: (reset?: IReset) => void;
     destroy: () => void;
     show: () => void;
     hide: () => void;
