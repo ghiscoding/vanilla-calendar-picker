@@ -1,5 +1,5 @@
 import { VanillaCalendar } from '@src/vanilla-calendar';
-import { ISettings } from '../types';
+import { IPartialSettings } from '../types';
 
 /**
  * Deep merge two objects.
@@ -26,6 +26,6 @@ export function mergeDeep(target: any, ...sources: any[]): any {
 	return mergeDeep(target, ...sources);
 }
 
-export function changeSetting<T extends keyof ISettings, K extends Partial<ISettings[T]>>(self: VanillaCalendar, option: T, value: K) {
+export function changeSetting<T extends keyof IPartialSettings, K extends Partial<IPartialSettings[T]>>(self: VanillaCalendar, option: T, value: K) {
 	self.settings = mergeDeep(self.settings, { [option]: value });
 }

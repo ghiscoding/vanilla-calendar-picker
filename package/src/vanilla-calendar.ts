@@ -1,4 +1,4 @@
-import { IOptions, IReset, ISettings, IVanillaCalendar } from '@src/types';
+import { IOptions, IReset, IPartialSettings, IVanillaCalendar } from '@src/types';
 import DefaultOptionsCalendar from '@scripts/default';
 import init from '@scripts/init';
 import update from '@scripts/update';
@@ -40,5 +40,5 @@ export class VanillaCalendar extends DefaultOptionsCalendar implements IVanillaC
 
 	hide = () => hide(this);
 
-	changeSetting = <T extends keyof ISettings, K extends Partial<ISettings[T]>>(option: T, value: K) => changeSetting(this, option, value);
+	changeSetting = <T extends keyof IPartialSettings, K extends Partial<IPartialSettings[T]>>(option: T, value: K) => changeSetting(this, option, value);
 }

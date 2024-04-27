@@ -38,7 +38,7 @@ export interface IRange {
 	 * This parameter will only keep references of the date range edges (start/end dates) in the `settings.selected.dates` array.
 	 * Only works when `settings.selection.day` is set to `'multiple-ranged'`.
 	 */
-	edgesOnly: boolean;
+	edgesOnly?: boolean;
 	/** This parameter disables all days and can be useful when using `settings.range.enabled` */
 	disableAllDays: boolean;
 	/** This parameter allows you to disable specified weekdays. */
@@ -121,6 +121,20 @@ export interface ISettings {
 	visibility: IVisibility;
 }
 
+export interface IPartialSettings {
+	/** This parameter sets the language localization of the calendar. */
+	lang: string;
+	/**
+	 * This parameter sets the start of the week in accordance with the international standard ISO 8601.
+	 * If set to `'false'`, the week will start on Sunday; otherwise, it starts on Monday.
+	 */
+	iso8601: boolean;
+	range: Partial<IRange>;
+	selection: Partial<ISelection>;
+	selected: Partial<ISelected>;
+	visibility: Partial<IVisibility>;
+}
+
 export interface ILocale {
 	months: string[] | [];
 	weekday: string[] | [];
@@ -176,14 +190,7 @@ export interface IOptions {
 	jumpToSelectedDate?: boolean;
 	date?: Partial<IDates>;
 	sanitizer?: (dirtyHtml: string) => unknown;
-	settings?: Partial<{
-		lang: string;
-		iso8601: boolean;
-		range: Partial<IRange>;
-		selection: Partial<ISelection>;
-		selected: Partial<ISelected>;
-		visibility: Partial<IVisibility>;
-	}>;
+	settings?: Partial<IPartialSettings>;
 	locale?: Partial<ILocale>;
 	actions?: Partial<IActions>;
 	popups?: IPopups;
