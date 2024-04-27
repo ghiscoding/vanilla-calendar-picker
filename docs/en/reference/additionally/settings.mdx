@@ -138,6 +138,32 @@ This parameter disables the selection of days within a range with disabled dates
 
 ---
 
+## settings.range.edgesOnly
+
+`Type: Boolean`
+
+`Default: false`
+
+`Options: true | false`
+
+```js
+new VanillaCalendar('#calendar', {
+  settings: {
+    range: {
+      edgesOnly: true,
+    }
+  },
+});
+```
+
+This parameter will only keep references of the date range edges which are the start and end dates in `settings.selected.dates` but nothing in between the range. It only works when <a href="/docs/reference/additionally/settings#selection-day">`settings.selection.day`</a> is set to `'multiple-ranged'`.
+
+<Info>
+  It's important to note that disabling dates inside the date range will have no effect and so you should use this parameter only when you are interested in the start and end date but nothing between.
+</Info>
+
+---
+
 ## settings.range.disableAllDays
 
 `Type: Boolean`

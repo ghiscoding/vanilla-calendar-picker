@@ -3,6 +3,17 @@
 ## Forked from Vanilla-Calendar-Pro
 This is a fork of the [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) project with a few differences as described below (see [Changes vs Original project](#changes-vs-original-project)).
 
+### Changes vs Original project
+- add new `jumpToSelectedDate` to automatically jump the calendar to the selected date.
+- add new `toggleSelected` to prevent date from being unselected (clicking twice).
+- add new `auto` option to `positionToInput` to automatically position picker with available space.
+- add new `sanitizer` callback option for CSP compliance.
+- allow passing `today` as min/max date.
+- allow supplying `Date` and/or epoch timestamp (`number`) in addition to ISO date strings.
+- add new `changeSetting()` function to be able to change a single setting
+
+---
+
 [![vanilla-calendar preview](https://vanilla-calendar.pro/vanilla-calendar-preview.png)](https://vanilla-calendar.pro/)
 
 [![version](https://img.shields.io/npm/v/vanilla-calendar-pro.svg)](https://npmjs.com/package/vanilla-calendar-pro)
@@ -50,14 +61,6 @@ yarn add vanilla-calendar-picker
 ```
 
 If you prefer not to use a package manager, you can also include it via [CDN](https://cdn.jsdelivr.net/npm/vanilla-calendar-picker/build/) or [download](https://vanilla-calendar.pro/vanilla-calendar.zip) it from the website.
-
-### Changes vs Original project
-- add new `jumpToSelectedDate` to automatically jump the calendar to the selected date
-- add new `toggleSelected` to allow removing day selection
-- add new `auto` option to `positionToInput`
-- add new `sanitizer` callback option
-- allow passing `today` as min/max date range
-- in addition to ISO date strings, also allow supplying `Date` and/or epoch timestamp as a `number`
 
 ### Usage
 

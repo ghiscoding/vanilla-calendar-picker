@@ -77,6 +77,7 @@ const configDiv: IOptions = {
 		},
 		range: {
 			disableGaps: true,
+			edgesOnly: true,
 		},
 		selected: {
 			dates: [new Date('2022-01-07')],
