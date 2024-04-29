@@ -6,12 +6,10 @@ const destroy = (self: VanillaCalendar) => {
 
 	if (self.input) {
 		self.HTMLElement?.parentElement?.removeChild(self.HTMLElement);
-		if (self.HTMLInputElement?.replaceWith) {
-			self.HTMLInputElement.replaceWith(self.HTMLOriginalElement);
-		}
+		self.HTMLInputElement?.replaceWith?.(self.HTMLOriginalElement);
 		self.HTMLInputElement = undefined;
-	} else if (self.HTMLElement?.replaceWith) {
-		self.HTMLElement.replaceWith(self.HTMLOriginalElement);
+	} else {
+		self.HTMLElement?.replaceWith?.(self.HTMLOriginalElement);
 	}
 
 	self.HTMLElement = self.HTMLOriginalElement;
