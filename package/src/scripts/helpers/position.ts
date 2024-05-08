@@ -55,14 +55,22 @@ export function calculateAvailableSpace(element: HTMLElement): { top: number; bo
 		const elementOffsetLeft = elmOffset.left ?? 0;
 		top = elementOffsetTop - pageScrollTop;
 		left = elementOffsetLeft - pageScrollLeft;
-		bottom = vh - (elementOffsetTop - pageScrollTop);
-		right = vw - (elementOffsetLeft - pageScrollLeft);
+		bottom = vh - (elementOffsetTop - pageScrollTop + element.clientHeight);
+		right = vw - (elementOffsetLeft - pageScrollLeft + element.clientWidth);
 	}
 
 	return { top, bottom, left, right };
 }
 
-export function getAvailablePosition(parentElm: HTMLElement, pickerElm: HTMLElement) {
+/**
+ * Get all available positions calculated by available space,
+ * e.g.: { canShow: { top: true, bottom: false, ...}, parentPositions: ['top', 'center'] }
+ * @param parentElm - parent element (input)
+ * @param pickerElm - picker element (calendar picker modal)
+ * @param marginOffset - margin offset when picker is opened
+ * @returns
+ */
+export function getAvailablePosition(parentElm: HTMLElement, pickerElm: HTMLElement, marginOffset = 5) {
 	const canShow = { top: true, bottom: true, left: true, right: true };
 	const parentPositions: PositionList = [] as unknown as PositionList;
 
@@ -86,10 +94,10 @@ export function getAvailablePosition(parentElm: HTMLElement, pickerElm: HTMLElem
 			parentPositions.push('right');
 		}
 
-		if (pickerHeight > spaceTop) {
+		if (pickerHeight > (spaceTop - marginOffset)) {
 			canShow.top = false;
 		}
-		if (pickerHeight > spaceBottom) {
+		if (pickerHeight > (spaceBottom - marginOffset)) {
 			canShow.bottom = false;
 		}
 		if (pickerWidth > pickerOffsetLeft) {
@@ -103,7 +111,6 @@ export function getAvailablePosition(parentElm: HTMLElement, pickerElm: HTMLElem
 	return { canShow, parentPositions };
 }
 
-// commonEditorFilterUtils.ts
 export function findBestPickerPosition(input: HTMLInputElement, calendar: HTMLElement): Position | PositionList {
 	let position: Position | PositionList = 'left';
 	if (calendar && input) {

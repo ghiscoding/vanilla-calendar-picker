@@ -39,6 +39,11 @@ const configDiv: IOptions = {
 			self.hide();
 		},
 	},
+	settings: {
+		visibility: {
+			positionToInput: 'auto',
+		},
+	},
 };
 
 document.addEventListener('DOMContentLoaded', () => {
