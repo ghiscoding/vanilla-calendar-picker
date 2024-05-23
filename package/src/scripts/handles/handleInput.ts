@@ -46,8 +46,13 @@ const handleInput = (self: VanillaCalendar) => {
 		document.body.appendChild(self.HTMLElement);
 		firstInit = false;
 
+		// because of a positioning delay, it might flicker for a short period
+		// we can hide the picker, reposition it, and finally show it back to avoid flickering because of the positioning delay below
+		self.HTMLElement.style.visibility = 'hidden';
+
 		setTimeout(() => {
 			setPositionCalendar(self.HTMLInputElement, calendar, self.settings.visibility.positionToInput, self.CSSClasses);
+			self.HTMLElement.style.visibility = 'visible';
 			self.show();
 		}, 0);
 		reset(self, {
