@@ -1,7 +1,8 @@
 # VanillaCalendar - A Lightweight, Feature-Rich JavaScript Date and Time Picker
 
-## Forked from Vanilla-Calendar-Pro
-This is a fork of the [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) project with a few differences as described below (see [Changes vs Original project](#changes-vs-original-project)).
+> [!NOTE]
+> ## Forked from [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro)
+> This is a fork of the [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) project with a few differences as described below (see [Changes vs Original project](#changes-vs-original-project)).
 
 ### Changes vs Original project
 - add new `jumpToSelectedDate` to automatically jump the calendar to the selected date.
