@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > ## Forked from [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro)
-> This is a fork of the [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) project with a few differences as described below (see [Changes vs Original project](#changes-vs-original-project)).
+> This is a fork of the [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) project with a few differences as described below (see [Changes vs Original project](#changes-vs-original-project)). The hope would be to switch back to the original project once all these changes are merged into the original library.
 
 ### Changes vs Original project
 - add new `jumpToSelectedDate` to automatically jump the calendar to the selected date.
