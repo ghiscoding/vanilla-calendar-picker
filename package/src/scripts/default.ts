@@ -18,6 +18,7 @@ import type {
 
 export default class DefaultOptionsCalendar {
 	isInit = false;
+	isInputInit = false;
 	input = false;
 	type: TypesCalendar = 'default';
 	months = 2;
