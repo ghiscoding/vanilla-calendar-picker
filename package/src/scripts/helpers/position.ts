@@ -4,9 +4,9 @@ type Position = 'center' | 'left' | 'right';
 type PositionList = ['bottom' | 'top', 'center' | 'left' | 'right'];
 
 /** Get HTML element offset with pure JS */
-export function getOffset(elm?: HTMLElement | null): HtmlElementPosition | undefined {
+export function getOffset(elm?: HTMLElement | null): HtmlElementPosition {
 	if (!elm || !elm.getBoundingClientRect) {
-		return undefined;
+		return { top: 0, bottom: 0, left: 0, right: 0 };
 	}
 	const box = elm.getBoundingClientRect();
 	const docElem = document.documentElement;
@@ -151,14 +151,17 @@ export const setPositionCalendar = (input: HTMLInputElement | undefined, calenda
 		const YPosition = !Array.isArray(pos) ? 'bottom' : pos[0];
 		const XPosition = !Array.isArray(pos) ? pos : pos[1];
 
-		calendar.classList.add(YPosition === 'bottom' ? css.calendarToInputBottom : css.calendarToInputTop);
+		if (YPosition === 'bottom') {
+			calendar.classList.remove(css.calendarToInputTop);
+			calendar.classList.add(css.calendarToInputBottom);
+		} else {
+			calendar.classList.remove(css.calendarToInputBottom);
+			calendar.classList.add(css.calendarToInputTop);
+		}
 
-		const inputRect = input.getBoundingClientRect();
-		const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
-		const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-		const top = inputRect.top + scrollTop + getPosition[YPosition];
-		const left = inputRect.left + scrollLeft + getPosition[XPosition];
+		const { top: offsetTop, left: offsetLeft } = getOffset(input);
+		const top = offsetTop + getPosition[YPosition];
+		const left = offsetLeft + getPosition[XPosition];
 
 		Object.assign(calendar.style, { left: `${left}px`, top: `${top}px` });
 	}
