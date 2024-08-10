@@ -11,10 +11,10 @@
   - add new `sanitizer` callback option for CSP compliance.
   - allow passing `today` as min/max date.
   - allow supplying `Date` and/or epoch timestamp (`number`) in addition to ISO date strings.
-- not yet in original project 
-  - add new `changeSetting()` function to be able to change a single setting (I might remove this one, not using it myself)
   - add new `auto` option to `positionToInput` to automatically position picker with available space.
   - add new `selectedDates.edgesOnly` to only return start/end dates of date range
+- not yet in original project
+  - add new `changeSetting()` function to be able to change a single setting (I might remove this one, not using it myself)
   - add Type descriptions for better intelliSense
 
 ---
