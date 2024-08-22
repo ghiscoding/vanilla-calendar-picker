@@ -1,21 +1,9 @@
 # VanillaCalendar - A Lightweight, Feature-Rich JavaScript Date and Time Picker
 
-> [!NOTE]
+> [!WARNING]
 > ## Forked from [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro)
-> This is a fork of the [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) project with a few differences as described below (see [Changes vs Original project](#changes-vs-original-project)). The hope would be to switch back to the original project once all these changes are merged into the original library.
-
-### Changes vs Original project
-- now merged into original project
-  - add new `jumpToSelectedDate` to automatically jump the calendar to the selected date.
-  - add new `toggleSelected` to prevent date from being unselected (clicking twice).
-  - add new `sanitizer` callback option for CSP compliance.
-  - allow passing `today` as min/max date.
-  - allow supplying `Date` and/or epoch timestamp (`number`) in addition to ISO date strings.
-  - add new `auto` option to `positionToInput` to automatically position picker with available space.
-  - add new `selectedDates.edgesOnly` to only return start/end dates of date range
-- not yet in original project
-  - add new `changeSetting()` function to be able to change a single setting (I might remove this one, not using it myself)
-  - add Type descriptions for better intelliSense
+>
+> This was a fork of the [Vanilla-Calendar-Pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) project but **is no longer supported** since all my PRs (about a dozen of them) for features and fixes were all merged.
 
 ---
 
